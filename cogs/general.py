@@ -48,7 +48,7 @@ class general(commands.Cog, name="general"):
         )
         embed.set_footer(
             text=f"Requested by {context.message.author}",
-            icon_url=
+            icon_url="{message.author.avatarURL}"
         )
         await context.send(embed=embed)
 
@@ -78,27 +78,27 @@ class general(commands.Cog, name="general"):
             url=server.icon_url
         )
         embed.add_field(
-            name="Owner",
+            name="Owner 👑",
             value=f"{server.owner}\n{server.owner.id}"
         )
         embed.add_field(
-            name="Server ID",
+            name="Server ID 🤓",
             value=server.id
         )
         embed.add_field(
-            name="Member Count",
+            name="Member Count 🎅",
             value=server.member_count
         )
         embed.add_field(
-            name="Text/Voice Channels",
-            value=f"{channels}"
+            name="Text/Voice Channels 📃",
+            value=f"{channels} "
         )
         embed.add_field(
-            name=f"Roles ({role_length})",
+            name=f"Roles ({role_length}) 👮‍♂️",
             value=roles
         )
         embed.set_footer(
-            text=f"Created at: {time}"
+            text=f"Created at: {time} ⏰"
         )
         await context.send(embed=embed)
 
