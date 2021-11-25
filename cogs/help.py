@@ -24,7 +24,7 @@ class Help(commands.Cog, name="help"):
         prefix = config["bot_prefix"]
         if not isinstance(prefix, str):
             prefix = prefix[0]
-        embed = discord.Embed(title="Help", description="List of available commands:", color=0x42F56C)
+        embed = discord.Embed(title="Help", description="List of available commands:", color=0x1eff00)
         for i in self.bot.cogs:
             cog = self.bot.get_cog(i.lower())
             commands = cog.get_commands()

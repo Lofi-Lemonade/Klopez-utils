@@ -26,7 +26,7 @@ class general(commands.Cog, name="general"):
         """
         embed = discord.Embed(
             description="This is Kyles Christmas Bot!",
-            color=0x42F56C
+            color=0x1eff00
         )
         embed.set_author(
             name="Bot Information"
@@ -47,7 +47,8 @@ class general(commands.Cog, name="general"):
             inline=False
         )
         embed.set_footer(
-            text=f"Requested by {context.message.author}"
+            text=f"Requested by {context.message.author}",
+            icon_url=
         )
         await context.send(embed=embed)
 
@@ -71,7 +72,7 @@ class general(commands.Cog, name="general"):
         embed = discord.Embed(
             title="**Server Name:**",
             description=f"{server}",
-            color=0x42F56C
+            color=0x1eff00
         )
         embed.set_thumbnail(
             url=server.icon_url
@@ -109,7 +110,7 @@ class general(commands.Cog, name="general"):
         embed = discord.Embed(
             title="🏓 Pong!",
             description=f"The bot latency is {round(self.bot.latency * 1000)}ms.",
-            color=0x42F56C
+            color=0x1eff00
         )
         await context.send(embed=embed)
 
@@ -152,7 +153,7 @@ class general(commands.Cog, name="general"):
         embed = discord.Embed(
             title="A new poll has been created!",
             description=f"{title}",
-            color=0x42F56C
+            color=0x1eff00
         )
         embed.set_footer(
             text=f"Poll created by: {context.message.author} • React to vote!"
@@ -175,7 +176,7 @@ class general(commands.Cog, name="general"):
         embed = discord.Embed(
             title="**My Answer:**",
             description=f"{answers[random.randint(0, len(answers))]}",
-            color=0x42F56C
+            color=0x1eff00
         )
         embed.set_footer(
             text=f"The question was: {question}"
@@ -196,7 +197,7 @@ class general(commands.Cog, name="general"):
             embed = discord.Embed(
                 title=":information_source: Info",
                 description=f"Bitcoin price is: ${response['bpi']['USD']['rate']}",
-                color=0x42F56C
+                color=0x1eff00
             )
             await context.send(embed=embed)
 

@@ -35,7 +35,7 @@ class moderation(commands.Cog, name="moderation"):
                 embed = discord.Embed(
                     title="User Kicked!",
                     description=f"**{member}** was kicked by **{context.message.author}**!",
-                    color=0x42F56C
+                    color=0x1eff00
                 )
                 embed.add_field(
                     name="Reason:",
@@ -67,7 +67,7 @@ class moderation(commands.Cog, name="moderation"):
             embed = discord.Embed(
                 title="Changed Nickname!",
                 description=f"**{member}'s** new nickname is **{nickname}**!",
-                color=0x42F56C
+                color=0x1eff00
             )
             await context.send(embed=embed)
         except:
@@ -97,7 +97,7 @@ class moderation(commands.Cog, name="moderation"):
                 embed = discord.Embed(
                     title="User Banned!",
                     description=f"**{member}** was banned by **{context.message.author}**!",
-                    color=0x42F56C
+                    color=0x1eff00
                 )
                 embed.add_field(
                     name="Reason:",
@@ -122,7 +122,7 @@ class moderation(commands.Cog, name="moderation"):
         embed = discord.Embed(
             title="User Warned!",
             description=f"**{member}** was warned by **{context.message.author}**!",
-            color=0x42F56C
+            color=0x1eff00
         )
         embed.add_field(
             name="Reason:",
@@ -162,7 +162,7 @@ class moderation(commands.Cog, name="moderation"):
         embed = discord.Embed(
             title="Chat Cleared!",
             description=f"**{context.message.author}** cleared **{len(purged_messages)}** messages!",
-            color=0x42F56C
+            color=0x1eff00
         )
         await context.send(embed=embed)
 

@@ -85,7 +85,7 @@ class Fun(commands.Cog, name="fun"):
             bot_choice_emote = random.choice(list(reactions.keys()))
             bot_choice_index = reactions[bot_choice_emote]
 
-            result_embed = discord.Embed(color=0x42F56C)
+            result_embed = discord.Embed(color=0x1eff00)
             result_embed.set_author(name=context.author.display_name, icon_url=context.author.avatar_url)
             await choose_message.clear_reactions()
 
@@ -94,13 +94,13 @@ class Fun(commands.Cog, name="fun"):
                 result_embed.colour = 0xF59E42
             elif user_choice_index == 0 and bot_choice_index == 2:
                 result_embed.description = f"**You won!**\nYou've chosen {user_choice_emote} and I've chosen {bot_choice_emote}."
-                result_embed.colour = 0x42F56C
+                result_embed.colour = 0x1eff00
             elif user_choice_index == 1 and bot_choice_index == 0:
                 result_embed.description = f"**You won!**\nYou've chosen {user_choice_emote} and I've chosen {bot_choice_emote}."
-                result_embed.colour = 0x42F56C
+                result_embed.colour = 0x1eff00
             elif user_choice_index == 2 and bot_choice_index == 1:
                 result_embed.description = f"**You won!**\nYou've chosen {user_choice_emote} and I've chosen {bot_choice_emote}."
-                result_embed.colour = 0x42F56C
+                result_embed.colour = 0x1eff00
             else:
                 result_embed.description = f"**I won!**\nYou've chosen {user_choice_emote} and I've chosen {bot_choice_emote}."
                 result_embed.colour = 0xE02B2B

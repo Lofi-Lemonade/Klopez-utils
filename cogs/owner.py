@@ -26,7 +26,7 @@ class owner(commands.Cog, name="owner"):
         if context.message.author.id in config["owners"]:
             embed = discord.Embed(
                 description="Shutting down. Bye! :wave:",
-                color=0x42F56C
+                color=0x1eff00
             )
             await context.send(embed=embed)
             await self.bot.close()
@@ -61,7 +61,7 @@ class owner(commands.Cog, name="owner"):
         if context.message.author.id in config["owners"]:
             embed = discord.Embed(
                 description=args,
-                color=0x42F56C
+                color=0x1eff00
             )
             await context.send(embed=embed)
         else:
@@ -109,7 +109,7 @@ class owner(commands.Cog, name="owner"):
                 embed = discord.Embed(
                     title="User Blacklisted",
                     description=f"**{member.name}** has been successfully added to the blacklist",
-                    color=0x42F56C
+                    color=0x1eff00
                 )
                 with open("blacklist.json") as file:
                     blacklist = json.load(file)
@@ -144,7 +144,7 @@ class owner(commands.Cog, name="owner"):
                 embed = discord.Embed(
                     title="User removed from blacklist",
                     description=f"**{member.name}** has been successfully removed from the blacklist",
-                    color=0x42F56C
+                    color=0x1eff00
                 )
                 with open("blacklist.json") as file:
                     blacklist = json.load(file)
