@@ -1,11 +1,3 @@
-""""
-Copyright © Krypton 2021 - https://github.com/kkrypt0nn
-Description:
-This is a template to create your own discord bot in python.
-
-Version: 2.7
-"""
-
 import json
 import os
 import platform
@@ -33,7 +25,7 @@ class general(commands.Cog, name="general"):
         Get some useful (or not) information about the bot.
         """
         embed = discord.Embed(
-            description="Used Krypton's template",
+            description="This is Kyles Christmas Bot!",
             color=0x42F56C
         )
         embed.set_author(
@@ -41,7 +33,7 @@ class general(commands.Cog, name="general"):
         )
         embed.add_field(
             name="Owner:",
-            value="Krypton#2188",
+            value="Lofi Lemonade",
             inline=True
         )
         embed.add_field(

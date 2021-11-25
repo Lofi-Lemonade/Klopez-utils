@@ -1,11 +1,3 @@
-""""
-Copyright © Krypton 2021 - https://github.com/kkrypt0nn
-Description:
-This is a template to create your own discord bot in python.
-
-Version: 2.8
-"""
-
 import json
 import os
 import platform
@@ -21,36 +13,6 @@ if not os.path.isfile("config.json"):
 else:
     with open("config.json") as file:
         config = json.load(file)
-
-"""	
-Setup bot intents (events restrictions)
-For more information about intents, please go to the following websites:
-https://discordpy.readthedocs.io/en/latest/intents.html
-https://discordpy.readthedocs.io/en/latest/intents.html#privileged-intents
-
-
-Default Intents:
-intents.messages = True
-intents.reactions = True
-intents.guilds = True
-intents.emojis = True
-intents.bans = True
-intents.guild_typing = False
-intents.typing = False
-intents.dm_messages = False
-intents.dm_reactions = False
-intents.dm_typing = False
-intents.guild_messages = True
-intents.guild_reactions = True
-intents.integrations = True
-intents.invites = True
-intents.voice_states = False
-intents.webhooks = False
-
-Privileged Intents (Needs to be enabled on dev page), please use them only if you need them:
-intents.presences = True
-intents.members = True
-"""
 
 intents = discord.Intents.default()
 
@@ -71,7 +33,7 @@ async def on_ready():
 # Setup the game status task of the bot
 @tasks.loop(minutes=1.0)
 async def status_task():
-    statuses = ["with you!", "with Krypton!", f"{config['bot_prefix']}help", "with humans!"]
+    statuses = ["In the Christmas Cabin", "With Kyle", f"{config['bot_prefix']}help"]
     await bot.change_presence(activity=discord.Game(random.choice(statuses)))
 
 
@@ -84,7 +46,6 @@ if __name__ == "__main__":
             extension = file[:-3]
             try:
                 bot.load_extension(f"cogs.{extension}")
-                print(f"Loaded extension '{extension}'")
             except Exception as e:
                 exception = f"{type(e).__name__}: {e}"
                 print(f"Failed to load extension {extension}\n{exception}")
