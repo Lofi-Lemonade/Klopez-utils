@@ -112,6 +112,26 @@ class Fun(commands.Cog, name="fun"):
             timeout_embed.set_author(name=context.author.display_name, icon_url=context.author.avatar_url)
             await choose_message.edit(embed=timeout_embed)
 
+    @commands.command(name = "meme")
+    async def  meme(self, ctx:commands.Context):
+        embed = discord.Embed(title="Heres A Random Meme!", description="", color=0xff0000)
+        embed.set_image(url="https://api.cool-img-api.ml/meme")
+        await ctx.send(embed=embed)
+    
+    @commands.command(name = "dogs")
+    async def  dogs(self, ctx:commands.Context):
+        embed = discord.Embed(title="Heres A Dog", description="", color=0xff0000)
+        embed.set_image(url="https://api.cool-img-api.ml/dogs")
+        await ctx.send(embed=embed)
+    
+    @commands.command(name = "birb")
+    async def  birb(self, ctx:commands.Context):
+        embed=discord.Embed(title="Heres A Birb", description="", color=0xff0000)
+        embed.set_image(url="https://api.cool-img-api.ml/birb")
+        embed.set_footer(text="Yo its a bird")
+        await ctx.send(embed=embed)
+
+
 
 def setup(bot):
     bot.add_cog(Fun(bot))

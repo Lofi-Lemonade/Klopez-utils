@@ -1,12 +1,15 @@
 import json
 import os
+import io
+import re
+import contextlib
 import platform
 import random
 import sys
-
 import discord
 from discord.ext import commands, tasks
 from discord.ext.commands import Bot
+from discord_slash import SlashCommand, SlashContext
 
 if not os.path.isfile("config.json"):
     sys.exit("'config.json' not found! Please add it and try again.")
@@ -17,6 +20,7 @@ else:
 intents = discord.Intents.default()
 
 bot = Bot(command_prefix=config["bot_prefix"], intents=intents)
+slash = SlashCommand(bot)
 
 
 # The code in this even is executed when the bot is ready
@@ -105,7 +109,26 @@ async def on_command_error(context, error):
         )
         await context.send(embed=embed)
     raise error
+    
+@bot.command()
+async def weather(ctx, *, message): 
+    embed = discord.Embed(color=0x1eff00,
+                          title=f"Weather in {message}")
+    embed.set_image(
+        url=
+        f"https://api.cool-img-api.ml/weather-card?location={message}&background=https://pbs.twimg.com/media/EnLHDYBVgAQNLAt.jpg"
+    )
+    embed.set_footer(text="Brought to you by Klopez", icon_url='https://cdn.discordapp.com/icons/838607169074888744/6032690c7a3c80143d17836c6f6aa506.png?size=4096')
+    embed.set_author(name="Klopez Utils", icon_url="https://cdn.discordapp.com/icons/838607169074888744/6032690c7a3c80143d17836c6f6aa506.png?size=4096")
+    await ctx.send(embed=embed)
+
+@bot.command()
+async def lofi(ctx):
+    embed = discord.Embed(title="Lofis Test thingy yeah", description="Poopshit", color=0x1eff00,)
+    embed.set_footer(text="Yo this is so easy to make omfg", icon_url="https://cdn.discordapp.com/icons/838607169074888744/6032690c7a3c80143d17836c6f6aa506.png?size=4096")    
+    await ctx.send(embed=embed)
 
 
+    
 # Run the bot with the token
 bot.run(config["token"])

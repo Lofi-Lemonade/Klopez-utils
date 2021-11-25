@@ -78,6 +78,8 @@ class moderation(commands.Cog, name="moderation"):
             )
             await context.message.channel.send(embed=embed)
 
+    
+
     @commands.command(name="ban")
     @commands.has_permissions(ban_members=True)
     async def ban(self, context, member: discord.Member, *, reason="Not specified"):

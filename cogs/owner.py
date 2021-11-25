@@ -143,7 +143,7 @@ class owner(commands.Cog, name="owner"):
                 json_manager.remove_user_from_blacklist(userID)
                 embed = discord.Embed(
                     title="User removed from blacklist",
-                    description=f"**{member.name}** has been successfully removed from the blacklist",
+                    description=f"**{member.name}** has been successfully removed from the blacklist ✅",
                     color=0x1eff00
                 )
                 with open("blacklist.json") as file:
