@@ -200,6 +200,7 @@ class general(commands.Cog, name="general"):
                 color=0x1eff00
             )
             await context.send(embed=embed)
+    
                 
       
 

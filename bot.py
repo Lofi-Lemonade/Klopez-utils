@@ -123,6 +123,14 @@ async def weather(ctx, *, message):
     await ctx.send(embed=embed)
 
 @bot.command()
+async def error(ctx, *, message): 
+    embed = discord.Embed(color=0xff0000, title=f"Showing You Error{message}")
+    embed.set_image(url= f"https://http.cat/{message}")
+    embed.set_footer(text="Brought to you by Klopez", icon_url='https://cdn.discordapp.com/icons/838607169074888744/6032690c7a3c80143d17836c6f6aa506.png?size=4096')
+    embed.set_author(name="Klopez Utils", icon_url="https://cdn.discordapp.com/icons/838607169074888744/6032690c7a3c80143d17836c6f6aa506.png?size=4096")
+    await ctx.send(embed=embed)
+
+@bot.command()
 async def lofi(ctx):
     embed = discord.Embed(title="Lofis Test thingy yeah", description="Poopshit", color=0x1eff00,)
     embed.set_footer(text="Yo this is so easy to make omfg", icon_url="https://cdn.discordapp.com/icons/838607169074888744/6032690c7a3c80143d17836c6f6aa506.png?size=4096")    
