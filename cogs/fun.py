@@ -49,7 +49,7 @@ class Fun(commands.Cog, name="fun"):
                     embed = discord.Embed(
                         title="Error!",
                         description="There is something wrong with the API, please try again later",
-                        color=0xE02B2B
+                        color=0xff0000
                     )
                     await context.send(embed=embed)
                     # We need to reset the cool down since the user didn't got his daily fact.
@@ -103,12 +103,12 @@ class Fun(commands.Cog, name="fun"):
                 result_embed.colour = 0x1eff00
             else:
                 result_embed.description = f"**I won!**\nYou've chosen {user_choice_emote} and I've chosen {bot_choice_emote}."
-                result_embed.colour = 0xE02B2B
+                result_embed.colour = 0xff0000
                 await choose_message.add_reaction("🇱")
             await choose_message.edit(embed=result_embed)
         except asyncio.exceptions.TimeoutError:
             await choose_message.clear_reactions()
-            timeout_embed = discord.Embed(title="Too late", color=0xE02B2B)
+            timeout_embed = discord.Embed(title="Too late", color=0xff0000)
             timeout_embed.set_author(name=context.author.display_name, icon_url=context.author.avatar_url)
             await choose_message.edit(embed=timeout_embed)
 

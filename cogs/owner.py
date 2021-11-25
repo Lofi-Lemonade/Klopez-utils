@@ -34,7 +34,7 @@ class owner(commands.Cog, name="owner"):
             embed = discord.Embed(
                 title="Error!",
                 description="You don't have the permission to use this command.",
-                color=0xE02B2B
+                color=0xff0000
             )
             await context.send(embed=embed)
 
@@ -49,7 +49,7 @@ class owner(commands.Cog, name="owner"):
             embed = discord.Embed(
                 title="Error!",
                 description="You don't have the permission to use this command.",
-                color=0xE02B2B
+                color=0xff0000
             )
             await context.send(embed=embed)
 
@@ -68,7 +68,7 @@ class owner(commands.Cog, name="owner"):
             embed = discord.Embed(
                 title="Error!",
                 description="You don't have the permission to use this command.",
-                color=0xE02B2B
+                color=0xff0000
             )
             await context.send(embed=embed)
 
@@ -101,7 +101,7 @@ class owner(commands.Cog, name="owner"):
                     embed = discord.Embed(
                         title="Error!",
                         description=f"**{member.name}** is already in the blacklist.",
-                        color=0xE02B2B
+                        color=0xff0000
                     )
                     await context.send(embed=embed)
                     return
@@ -121,14 +121,14 @@ class owner(commands.Cog, name="owner"):
                 embed = discord.Embed(
                     title="Error!",
                     description=f"An unknown error occurred when trying to add **{member.name}** to the blacklist.",
-                    color=0xE02B2B
+                    color=0xff0000
                 )
                 await context.send(embed=embed)
         else:
             embed = discord.Embed(
                 title="Error!",
                 description="You don't have the permission to use this command.",
-                color=0xE02B2B
+                color=0xff0000
             )
             await context.send(embed=embed)
 
@@ -156,14 +156,14 @@ class owner(commands.Cog, name="owner"):
                 embed = discord.Embed(
                     title="Error!",
                     description=f"**{member.name}** is not in the blacklist.",
-                    color=0xE02B2B
+                    color=0xff0000
                 )
                 await context.send(embed=embed)
         else:
             embed = discord.Embed(
                 title="Error!",
                 description="You don't have the permission to use this command.",
-                color=0xE02B2B
+                color=0xff0000
             )
             await context.send(embed=embed)
 

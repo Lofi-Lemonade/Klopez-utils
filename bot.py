@@ -85,7 +85,7 @@ async def on_command_error(context, error):
         embed = discord.Embed(
             title="Hey, please slow down!",
             description=f"You can use this command again in {f'{round(hours)} hours' if round(hours) > 0 else ''} {f'{round(minutes)} minutes' if round(minutes) > 0 else ''} {f'{round(seconds)} seconds' if round(seconds) > 0 else ''}.",
-            color=0xE02B2B
+            color=0xff0000
         )
         await context.send(embed=embed)
     elif isinstance(error, commands.MissingPermissions):
@@ -93,7 +93,7 @@ async def on_command_error(context, error):
             title="Error!",
             description="You are missing the permission `" + ", ".join(
                 error.missing_perms) + "` to execute this command!",
-            color=0xE02B2B
+            color=0xff0000
         )
         await context.send(embed=embed)
     elif isinstance(error, commands.MissingRequiredArgument):
@@ -101,7 +101,7 @@ async def on_command_error(context, error):
             title="Error!",
             description=str(error).capitalize(),
             # We need to capitalize because the command arguments have no capital letter in the code.
-            color=0xE02B2B
+            color=0xff0000
         )
         await context.send(embed=embed)
     raise error

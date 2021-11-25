@@ -26,7 +26,7 @@ class moderation(commands.Cog, name="moderation"):
             embed = discord.Embed(
                 title="Error!",
                 description="User has Admin permissions.",
-                color=0xE02B2B
+                color=0xff0000
             )
             await context.send(embed=embed)
         else:
@@ -52,7 +52,7 @@ class moderation(commands.Cog, name="moderation"):
                 embed = discord.Embed(
                     title="Error!",
                     description="An error occurred while trying to kick the user. Make sure my role is above the role of the user you want to kick.",
-                    color=0xE02B2B
+                    color=0xff0000
                 )
                 await context.message.channel.send(embed=embed)
 
@@ -74,7 +74,7 @@ class moderation(commands.Cog, name="moderation"):
             embed = discord.Embed(
                 title="Error!",
                 description="An error occurred while trying to change the nickname of the user. Make sure my role is above the role of the user you want to change the nickname.",
-                color=0xE02B2B
+                color=0xff0000
             )
             await context.message.channel.send(embed=embed)
 
@@ -89,7 +89,7 @@ class moderation(commands.Cog, name="moderation"):
                 embed = discord.Embed(
                     title="Error!",
                     description="User has Admin permissions.",
-                    color=0xE02B2B
+                    color=0xff0000
                 )
                 await context.send(embed=embed)
             else:
@@ -109,7 +109,7 @@ class moderation(commands.Cog, name="moderation"):
             embed = discord.Embed(
                 title="Error!",
                 description="An error occurred while trying to ban the user. Make sure my role is above the role of the user you want to ban.",
-                color=0xE02B2B
+                color=0xff0000
             )
             await context.send(embed=embed)
 
@@ -146,7 +146,7 @@ class moderation(commands.Cog, name="moderation"):
             embed = discord.Embed(
                 title="Error!",
                 description=f"`{amount}` is not a valid number.",
-                color=0xE02B2B
+                color=0xff0000
             )
             await context.send(embed=embed)
             return
@@ -154,7 +154,7 @@ class moderation(commands.Cog, name="moderation"):
             embed = discord.Embed(
                 title="Error!",
                 description=f"`{amount}` is not a valid number.",
-                color=0xE02B2B
+                color=0xff0000
             )
             await context.send(embed=embed)
             return
