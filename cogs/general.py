@@ -48,7 +48,7 @@ class general(commands.Cog, name="general"):
         )
         embed.set_footer(
             text=f"Requested by {context.message.author}",
-            icon_url="https://cdn.discordapp.com/icons/838607169074888744/6032690c7a3c80143d17836c6f6aa506.png?size=4096"
+            icon_url="https://cdn.discordapp.com/attachments/866421856957235200/913499699586162708/invert.png"
         )
         await context.send(embed=embed)
 

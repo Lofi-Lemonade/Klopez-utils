@@ -11,6 +11,8 @@ from discord.ext import commands, tasks
 from discord.ext.commands import Bot
 from discord_slash import SlashCommand, SlashContext
 
+clear = lambda: os.system('clear')
+
 if not os.path.isfile("config.json"):
     sys.exit("'config.json' not found! Please add it and try again.")
 else:
@@ -24,21 +26,29 @@ slash = SlashCommand(bot)
 
 
 # The code in this even is executed when the bot is ready
+
+def prRed(prt): print("\033[91m {}\033[00m" .format(prt))
+def prGreen(prt): print("\033[92m {}\033[00m" .format(prt))
+def prYellow(prt): print("\033[93m {}\033[00m" .format(prt))
+def prLightPurple(prt): print("\033[94m {}\033[00m" .format(prt))
+def prPurple(prt): print("\033[95m {}\033[00m" .format(prt))
+def prCyan(prt): print("\033[96m {}\033[00m" .format(prt))
+def prLightGray(prt): print("\033[97m {}\033[00m" .format(prt))
+def prBlack(prt): print("\033[98m {}\033[00m" .format(prt))
+
+
 @bot.event
 async def on_ready():
-    print(f"Logged in as {bot.user.name}")
-    print(f"Discord.py API version: {discord.__version__}")
-    print(f"Python version: {platform.python_version()}")
-    print(f"Running on: {platform.system()} {platform.release()} ({os.name})")
-    print("-------------------")
-    status_task.start()
+    clear()
+    prGreen(f"Logged in as {bot.user.name} ✅")
+    prCyan(f"Discord.py API version: {discord.__version__} 📘")
+    prYellow(f"Python version: {platform.python_version()} 🟡")
+    prPurple(f"Running on: {platform.system()} {platform.release()} ({os.name}) 💻")
+    print(" ")
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Christmas Movies!"))
+    await bot.change_presence(status=discord.Status.dnd)
+    
 
-
-# Setup the game status task of the bot
-@tasks.loop(minutes=1.0)
-async def status_task():
-    statuses = ["In the Christmas Cabin", "With Kyle", f"{config['bot_prefix']}help"]
-    await bot.change_presence(activity=discord.Game(random.choice(statuses)))
 
 
 # Removes the default help command of discord.py to be able to create our custom help command.
@@ -75,8 +85,8 @@ async def on_command_completion(ctx):
     fullCommandName = ctx.command.qualified_name
     split = fullCommandName.split(" ")
     executedCommand = str(split[0])
-    print(
-        f"Executed {executedCommand} command in {ctx.guild.name} (ID: {ctx.message.guild.id}) by {ctx.message.author} (ID: {ctx.message.author.id})")
+    prGreen(
+        f"Executed {executedCommand} command in {ctx.guild.name} (ID: {ctx.message.guild.id}) by {ctx.message.author} (ID: {ctx.message.author.id}) ✅")
 
 
 # The code in this event is executed every time a valid commands catches an error
@@ -118,22 +128,30 @@ async def weather(ctx, *, message):
         url=
         f"https://api.cool-img-api.ml/weather-card?location={message}&background=https://pbs.twimg.com/media/EnLHDYBVgAQNLAt.jpg"
     )
-    embed.set_footer(text="Brought to you by Klopez", icon_url='https://cdn.discordapp.com/icons/838607169074888744/6032690c7a3c80143d17836c6f6aa506.png?size=4096')
-    embed.set_author(name="Klopez Utils", icon_url="https://cdn.discordapp.com/icons/838607169074888744/6032690c7a3c80143d17836c6f6aa506.png?size=4096")
+    embed.set_footer(text="Brought to you by Klopez", icon_url='https://cdn.discordapp.com/attachments/866421856957235200/913499699586162708/invert.png')
+    embed.set_author(name="Klopez Utils", icon_url="https://cdn.discordapp.com/attachments/866421856957235200/913499699586162708/invert.png")
     await ctx.send(embed=embed)
 
 @bot.command()
-async def error(ctx, *, message): 
+async def errorcat(ctx, *, message): 
     embed = discord.Embed(color=0xff0000, title=f"Showing You Error{message}")
     embed.set_image(url= f"https://http.cat/{message}")
-    embed.set_footer(text="Brought to you by Klopez", icon_url='https://cdn.discordapp.com/icons/838607169074888744/6032690c7a3c80143d17836c6f6aa506.png?size=4096')
-    embed.set_author(name="Klopez Utils", icon_url="https://cdn.discordapp.com/icons/838607169074888744/6032690c7a3c80143d17836c6f6aa506.png?size=4096")
+    embed.set_footer(text="Brought to you by Klopez", icon_url='https://cdn.discordapp.com/attachments/866421856957235200/913499699586162708/invert.png')
+    embed.set_author(name="Klopez Utils", icon_url="https://cdn.discordapp.com/attachments/866421856957235200/913499699586162708/invert.png")
+    await ctx.send(embed=embed)
+
+@bot.command()
+async def errordog(ctx, *, message): 
+    embed = discord.Embed(color=0xff0000, title=f"Showing You Error{message}")
+    embed.set_image(url= f"https://httpstatusdogs.com/{message}")
+    embed.set_footer(text="Brought to you by Klopez", icon_url='https://cdn.discordapp.com/attachments/866421856957235200/913499699586162708/invert.png')
+    embed.set_author(name="Klopez Utils", icon_url="https://cdn.discordapp.com/attachments/866421856957235200/913499699586162708/invert.png")
     await ctx.send(embed=embed)
 
 @bot.command()
 async def lofi(ctx):
     embed = discord.Embed(title="Lofis Test thingy yeah", description="Poopshit", color=0x1eff00,)
-    embed.set_footer(text="Yo this is so easy to make omfg", icon_url="https://cdn.discordapp.com/icons/838607169074888744/6032690c7a3c80143d17836c6f6aa506.png?size=4096")    
+    embed.set_footer(text="Yo this is so easy to make omfg", icon_url="https://cdn.discordapp.com/attachments/866421856957235200/913499699586162708/invert.png")    
     await ctx.send(embed=embed)
 
 
