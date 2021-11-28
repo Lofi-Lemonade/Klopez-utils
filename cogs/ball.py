@@ -30,7 +30,6 @@ class Ball(commands.Cog, name="Balls 🔴🟢🔵"):
                 embed.add_field(name="Green 🟢", value="`-yogaball Green`", inline=False)
                 embed.add_field(name="Blue 🔵", value="`-yogaball Blue`", inline=False)
                 embed.set_footer(text="Command Suggested By @Qüīêt#6066 ", icon_url="https://cdn.discordapp.com/avatars/574107787416567820/2d05f621420afa168149d82c0d4bec76.png?size=128")
-                embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/574107787416567820/2d05f621420afa168149d82c0d4bec76.png?size=128")
                 await ctx.send(embed=embed)
 
     @yogaball.command(name="red")
