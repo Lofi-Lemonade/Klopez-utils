@@ -21,7 +21,7 @@ else:
 
 intents = discord.Intents.default()
 
-bot = Bot(command_prefix=config["bot_prefix"], intents=intents)
+bot = Bot(command_prefix=config["bot_prefix"], intents=intents, status=discord.Status.dnd,activity=discord.Activity(type=discord.ActivityType.watching, name="Christmas Movies!"))
 slash = SlashCommand(bot)
 
 def prRed(prt): print("\033[91m {}\033[00m" .format(prt))
@@ -42,8 +42,6 @@ async def on_ready():
     prYellow(f"Python version: {platform.python_version()} 🟡")
     prPurple(f"Running on: {platform.system()} {platform.release()} ({os.name}) 💻")
     print(" ")
-    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Christmas Movies!"))
-    await bot.change_presence(status=discord.Status.dnd)
     
 
 bot.remove_command("help")
