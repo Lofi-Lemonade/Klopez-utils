@@ -24,9 +24,6 @@ intents = discord.Intents.default()
 bot = Bot(command_prefix=config["bot_prefix"], intents=intents)
 slash = SlashCommand(bot)
 
-
-# The code in this even is executed when the bot is ready
-
 def prRed(prt): print("\033[91m {}\033[00m" .format(prt))
 def prGreen(prt): print("\033[92m {}\033[00m" .format(prt))
 def prYellow(prt): print("\033[93m {}\033[00m" .format(prt))
@@ -49,9 +46,6 @@ async def on_ready():
     await bot.change_presence(status=discord.Status.dnd)
     
 
-
-
-# Removes the default help command of discord.py to be able to create our custom help command.
 bot.remove_command("help")
 
 if __name__ == "__main__":
@@ -65,13 +59,11 @@ if __name__ == "__main__":
                 print(f"Failed to load extension {extension}\n{exception}")
 
 
-# The code in this event is executed every time someone sends a message, with or without the prefix
+
 @bot.event
 async def on_message(message):
-    # Ignores if a command is being executed by a bot or by the bot itself
     if message.author == bot.user or message.author.bot:
         return
-    # Ignores if a command is being executed by a blacklisted user
     with open("blacklist.json") as file:
         blacklist = json.load(file)
     if message.author.id in blacklist["ids"]:
@@ -79,7 +71,6 @@ async def on_message(message):
     await bot.process_commands(message)
 
 
-# The code in this event is executed every time a command has been *successfully* executed
 @bot.event
 async def on_command_completion(ctx):
     fullCommandName = ctx.command.qualified_name
@@ -89,7 +80,6 @@ async def on_command_completion(ctx):
         f"Executed {executedCommand} command in {ctx.guild.name} by {ctx.message.author} ✅")
 
 
-# The code in this event is executed every time a valid commands catches an error
 @bot.event
 async def on_command_error(context, error):
     if isinstance(error, commands.CommandOnCooldown):
@@ -114,7 +104,6 @@ async def on_command_error(context, error):
         embed = discord.Embed(
             title="Error!",
             description=str(error).capitalize(),
-            # We need to capitalize because the command arguments have no capital letter in the code.
             color=0xff0000
         )
         await context.send(embed=embed)
@@ -154,7 +143,4 @@ async def lofi(ctx):
     embed.set_footer(text="Yo this is so easy to make omfg", icon_url="https://cdn.discordapp.com/attachments/866421856957235200/913499699586162708/invert.png")    
     await ctx.send(embed=embed)
 
-
-    
-# Run the bot with the token
 bot.run(config["token"])

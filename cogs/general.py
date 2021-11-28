@@ -124,7 +124,6 @@ class general(commands.Cog, name="general 📚"):
             color=0xD75BF4
         )
         try:
-            # To know what permissions to give to your bot, please see here: https://discordapi.com/permissions.html and remember to not give Administrator permissions.
             await context.author.send(embed=embed)
             await context.send("I sent you a private message!")
         except discord.Forbidden:
@@ -189,7 +188,6 @@ class general(commands.Cog, name="general 📚"):
         Get the current price of bitcoin.
         """
         url = "https://api.coindesk.com/v1/bpi/currentprice/BTC.json"
-        # Async HTTP request
         async with aiohttp.ClientSession() as session:
             raw_response = await session.get(url)
             response = await raw_response.text()

@@ -38,7 +38,6 @@ class Fun(commands.Cog, name="fun 🎉"):
         """
         Get a daily fact, command can only be ran once every day per user.
         """
-        # This will prevent your bot from stopping everything when doing a web request - see: https://discordpy.readthedocs.io/en/stable/faq.html#how-do-i-make-a-web-request
         async with aiohttp.ClientSession() as session:
             async with session.get("https://uselessfacts.jsph.pl/random.json?language=en") as request:
                 if request.status == 200:
@@ -52,7 +51,6 @@ class Fun(commands.Cog, name="fun 🎉"):
                         color=0xff0000
                     )
                     await context.send(embed=embed)
-                    # We need to reset the cool down since the user didn't got his daily fact.
                     self.dailyfact.reset_cooldown(context)
 
     @commands.command(name="rps")
