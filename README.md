@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Python Discord Bot Template
 
 <p align="center">
@@ -34,3 +35,6 @@ information, I reserve the right to take down any repository that does not meet 
 ## License
 
 This project is licensed under the Apache License 2.0 - see the [LICENSE.md](LICENSE.md) file for details
+=======
+Wasup 
+>>>>>>> 127f22df6b4a3041d54d199f66611dd148bfb932
