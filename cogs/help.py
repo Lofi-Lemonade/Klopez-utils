@@ -12,7 +12,7 @@ else:
         config = json.load(file)
 
 
-class Help(commands.Cog, name="help"):
+class Help(commands.Cog, name="help 🧾"):
     def __init__(self, bot):
         self.bot = bot
 
@@ -24,14 +24,16 @@ class Help(commands.Cog, name="help"):
         prefix = config["bot_prefix"]
         if not isinstance(prefix, str):
             prefix = prefix[0]
-        embed = discord.Embed(title="Help", description="List of available commands:", color=0x1eff00)
+        embed = discord.Embed(title="Help", description="Heres a list of all the commands on the bot! 📚", color=0xff0000)
         for i in self.bot.cogs:
-            cog = self.bot.get_cog(i.lower())
+            cog = self.bot.get_cog(i)
             commands = cog.get_commands()
             command_list = [command.name for command in commands]
             command_description = [command.help for command in commands]
             help_text = '\n'.join(f'{prefix}{n} - {h}' for n, h in zip(command_list, command_description))
             embed.add_field(name=i.capitalize(), value=f'```{help_text}```', inline=False)
+            embed.set_thumbnail(url="https://cdn.discordapp.com/icons/838607169074888744/b89f584442452692fde640b68852c365.png?size=4096")
+            embed.set_footer(text="Brought To You By Klopez", icon_url="https://cdn.discordapp.com/icons/838607169074888744/b89f584442452692fde640b68852c365.png?size=4096")
         await context.send(embed=embed)
 
 

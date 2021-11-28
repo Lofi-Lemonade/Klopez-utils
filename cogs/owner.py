@@ -14,11 +14,11 @@ else:
         config = json.load(file)
 
 
-class owner(commands.Cog, name="owner"):
+class owner(commands.Cog, name="owner 💻"):
     def __init__(self, bot):
         self.bot = bot
 
-        
+    
     @commands.command(name="shutdown")
     async def shutdown(self, context):
         """

@@ -12,7 +12,7 @@ else:
         config = json.load(file)
 
 
-class moderation(commands.Cog, name="moderation"):
+class moderation(commands.Cog, name="moderation 🚓"):
     def __init__(self, bot):
         self.bot = bot
 
@@ -77,8 +77,6 @@ class moderation(commands.Cog, name="moderation"):
                 color=0xff0000
             )
             await context.message.channel.send(embed=embed)
-
-    
 
     @commands.command(name="ban")
     @commands.has_permissions(ban_members=True)

@@ -86,7 +86,7 @@ async def on_command_completion(ctx):
     split = fullCommandName.split(" ")
     executedCommand = str(split[0])
     prGreen(
-        f"Executed {executedCommand} command in {ctx.guild.name} (ID: {ctx.message.guild.id}) by {ctx.message.author} (ID: {ctx.message.author.id}) ✅")
+        f"Executed {executedCommand} command in {ctx.guild.name} by {ctx.message.author} ✅")
 
 
 # The code in this event is executed every time a valid commands catches an error

@@ -16,7 +16,7 @@ else:
         config = json.load(file)
 
 
-class Fun(commands.Cog, name="fun"):
+class Fun(commands.Cog, name="fun 🎉"):
     def __init__(self, bot):
         self.bot = bot
 
@@ -114,18 +114,27 @@ class Fun(commands.Cog, name="fun"):
 
     @commands.command(name = "meme")
     async def  meme(self, ctx:commands.Context):
+        """
+        Shows A Random Meme
+        """
         embed = discord.Embed(title="Heres A Random Meme!", description="", color=0xff0000)
         embed.set_image(url="https://api.cool-img-api.ml/meme")
         await ctx.send(embed=embed)
     
     @commands.command(name = "dogs")
     async def  dogs(self, ctx:commands.Context):
+        """
+        Shows A Random Doggo
+        """
         embed = discord.Embed(title="Heres A Dog", description="", color=0xff0000)
         embed.set_image(url="https://api.cool-img-api.ml/dogs")
         await ctx.send(embed=embed)
     
     @commands.command(name = "birb")
     async def  birb(self, ctx:commands.Context):
+        """
+        Shows A Totally Rad Birb
+        """
         embed=discord.Embed(title="Heres A Birb", description="", color=0xff0000)
         embed.set_image(url="https://api.cool-img-api.ml/birb")
         embed.set_footer(text="Yo its a bird")

@@ -15,7 +15,7 @@ else:
         config = json.load(file)
 
 
-class general(commands.Cog, name="general"):
+class general(commands.Cog, name="general 📚"):
     def __init__(self, bot):
         self.bot = bot
 
@@ -48,7 +48,7 @@ class general(commands.Cog, name="general"):
         )
         embed.set_footer(
             text=f"Requested by {context.message.author}",
-            icon_url="https://cdn.discordapp.com/attachments/866421856957235200/913499699586162708/invert.png"
+            icon_url="https://cdn.discordapp.com/icons/838607169074888744/6032690c7a3c80143d17836c6f6aa506.png?size=4096"
         )
         await context.send(embed=embed)
 
@@ -200,7 +200,6 @@ class general(commands.Cog, name="general"):
                 color=0x1eff00
             )
             await context.send(embed=embed)
-    
                 
       
 
