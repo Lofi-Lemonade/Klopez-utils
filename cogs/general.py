@@ -182,6 +182,19 @@ class general(commands.Cog, name="general 📚"):
         )
         await context.send(embed=embed)
 
+    @commands.command(name ="present")
+    async def  present(self, ctx):
+        """
+        this is just a test for now
+        """
+        answers = ['When you open your present you find COAL!', 'When you open your present you find the toy you had on your wishlist!']
+        embed=discord.Embed(
+            title="Presents",
+            description=f"{answers[random.randint(0, len(answers))]}",
+            color=0xff0000
+        )
+        await ctx.send(embed=embed)
+
     @commands.command(name="bitcoin")
     async def bitcoin(self, context):
         """

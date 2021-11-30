@@ -119,6 +119,7 @@ class Fun(commands.Cog, name="fun 🎉"):
         embed.set_image(url="https://api.cool-img-api.ml/meme")
         await ctx.send(embed=embed)
     
+    
     @commands.command(name = "dogs")
     async def  dogs(self, ctx:commands.Context):
         """
