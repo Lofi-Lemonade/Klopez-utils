@@ -72,14 +72,14 @@ class general(commands.Cog, name="general 📚"):
         embed = discord.Embed(
             title="**Server Name:**",
             description=f"{server}",
-            color=0x1eff00
+            color=0xff0000
         )
         embed.set_thumbnail(
             url=server.icon_url
         )
         embed.add_field(
             name="Owner 👑",
-            value=f"{server.owner}\n{server.owner.id}"
+            value={discord.Guild.owner_id}
         )
         embed.add_field(
             name="Server ID 🤓",
@@ -182,19 +182,6 @@ class general(commands.Cog, name="general 📚"):
         )
         await context.send(embed=embed)
 
-    @commands.command(name ="present")
-    async def  present(self, ctx):
-        """
-        this is just a test for now
-        """
-        answers = ['When you open your present you find COAL!', 'When you open your present you find the toy you had on your wishlist!']
-        embed=discord.Embed(
-            title="Presents",
-            description=f"{answers[random.randint(0, len(answers))]}",
-            color=0xff0000
-        )
-        await ctx.send(embed=embed)
-
     @commands.command(name="bitcoin")
     async def bitcoin(self, context):
         """
@@ -211,8 +198,13 @@ class general(commands.Cog, name="general 📚"):
                 color=0x1eff00
             )
             await context.send(embed=embed)
-                
-      
+        
+        @commands.command(name = "boosters", aliases=["boosted"])
+        async def  boosters(self, ctx:commands.Context):
+            embed=discord.Embed(title="All The Wonderfull People Who Boosted", description="", color=0xff0000)
+            embed.add_field(name="", value="", inline=False)
+            embed.add_field(name="field", value="value", inline=False)
+            await ctx.send(embed=embed)
 
 def setup(bot):
     bot.add_cog(general(bot))

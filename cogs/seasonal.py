@@ -22,7 +22,7 @@ class Seasonal(commands.Cog, name="seasonal 🎄"):
 @commands.command(name ="present")
 async def  present(self, ctx):
         """
-        See what you will get for christmas!
+        pls just work istg
         """
         answers = ["When you open your present you find COAL! ❌", "When you open your present you find the toy you had on your wishlist! 🧸", "You open up your present suprised to find a YOGABALL! 🟢",
         "When you open your present you find some clothes 👚"]
